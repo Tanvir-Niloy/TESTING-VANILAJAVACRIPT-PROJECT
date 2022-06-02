@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changing</title>
+</head>
+<style>
+    body {
+        background-color: orange;
+    }
+    h2 {
+        font-size: 40px;
+        background-color: black;
+        padding: 10px 20px;
+        color: white;
+    }
+    button {
+        background-color: transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        border-color: white;
+        font-size: 30px;
+        color: black;
+        background-color: white;
+        
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2>Recent Background Color is : <span class="color">orange</span></h2>
+        <button class="change">Change the background Color</button>
+        <div class="test"></div>
+    </div>
+</body>
+<script>
+    const colors = ["green","red","blue","orange","purple","pink"];
+    var color = document.querySelector('.color')
+    const button = document.querySelector('.change')
+ 
+
+ document.addEventListener('click',function(){
+
+    var finalColor  = colors[randomColor()]
+    document.body.style.backgroundColor = finalColor;
+    color.textContent = finalColor
+
+    function randomColor(){
+
+        return Math.floor(Math.random() * colors.length)
+    }
+ })
+</script>
+</html>
